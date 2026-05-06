@@ -71,8 +71,12 @@ export function InteractiveHub() {
             <Card className="border-none bg-transparent p-0 shadow-none">
               <div className="space-y-6">
                 {quizQuestions.map((q, i) => (
-                  <motion.div key={q.question} whileHover={{ y: -2 }} className="rounded-2xl border border-white/50 bg-white/70 p-4">
-                    <p className="mb-3 font-semibold">{q.question}</p>
+                  <motion.div
+                    key={q.question}
+                    whileHover={{ y: -2 }}
+                    className="rounded-2xl border border-white/50 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-800/70"
+                  >
+                    <p className="mb-3 font-semibold dark:text-slate-100">{q.question}</p>
                     <div className="grid gap-2">
                       {q.options.map((opt) => (
                         <button
@@ -81,7 +85,7 @@ export function InteractiveHub() {
                           className={`rounded-xl border px-3 py-2 text-left text-sm transition ${
                             selected[i] === opt
                               ? "border-indigo-400 bg-indigo-50 text-indigo-900"
-                              : "border-slate-200 bg-white hover:bg-slate-50"
+                              : "border-slate-200 bg-white hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
                           }`}
                         >
                           {opt}
@@ -92,7 +96,7 @@ export function InteractiveHub() {
                 ))}
                 <Button onClick={calculateQuiz}>Проверить результат</Button>
                 {quizResult !== null && (
-                  <p className="text-sm font-semibold text-indigo-600">
+                  <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-300">
                     Результат: {quizResult}/{quizQuestions.length}.{" "}
                     {quizResult === quizQuestions.length
                       ? "Поздравляем! Вы мыслите как настоящий визуальный сторителлер."
@@ -108,40 +112,42 @@ export function InteractiveHub() {
           label: "Калькулятор практики",
           content: (
             <div className="space-y-4">
-              <p className="text-slate-700">
+              <p className="text-slate-700 dark:text-slate-300">
                 Хотите понять, как практика влияет на хобби? Введите часы в неделю и посмотрите примерный индекс роста.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
-                <label className="text-sm">
+                <label className="text-sm dark:text-slate-200">
                   Часов в неделю
                   <input
                     type="number"
                     min={1}
                     value={hours}
                     onChange={(e) => setHours(Number(e.target.value))}
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
                   />
                 </label>
-                <label className="text-sm">
+                <label className="text-sm dark:text-slate-200">
                   Количество недель
                   <input
                     type="number"
                     min={1}
                     value={weeks}
                     onChange={(e) => setWeeks(Number(e.target.value))}
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2"
+                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
                   />
                 </label>
               </div>
-              <div className="flex items-center justify-between rounded-2xl border border-white/50 bg-white/70 p-4">
+              <div className="flex items-center justify-between rounded-2xl border border-white/50 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-800/70">
                 <div>
-                  <p className="text-sm text-slate-600">Примерный индекс роста</p>
-                  <p className="text-2xl font-bold text-slate-900">{growthScore}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">Примерный индекс роста</p>
+                  <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{growthScore}</p>
                 </div>
                 <button
                   type="button"
                   onClick={() => setCinematicMode((prev) => !prev)}
-                  className={`relative h-8 w-14 rounded-full transition ${cinematicMode ? "bg-indigo-500" : "bg-slate-300"}`}
+                  className={`relative h-8 w-14 rounded-full transition ${
+                    cinematicMode ? "bg-indigo-500" : "bg-slate-300 dark:bg-slate-600"
+                  }`}
                   aria-label="Переключить кинематографичный режим"
                 >
                   <span
@@ -151,7 +157,7 @@ export function InteractiveHub() {
                   />
                 </button>
               </div>
-              <p className="flex items-center gap-2 text-sm text-slate-600">
+              <p className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                 {cinematicMode ? <Check className="h-4 w-4 text-emerald-500" /> : <Sparkles className="h-4 w-4 text-amber-500" />}
                 {cinematicMode
                   ? "Кинематографичный режим включен: фокус на атмосфере и эмоциях."
@@ -183,9 +189,13 @@ export function InteractiveHub() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {filteredItems.map((item) => (
-                  <motion.div key={item.id} whileHover={{ scale: 1.02 }} className="rounded-2xl border border-white/50 bg-white/70 p-4">
-                    <p className="text-sm uppercase tracking-wide text-slate-500">{item.typeLabel}</p>
-                    <p className="font-semibold">{item.title}</p>
+                  <motion.div
+                    key={item.id}
+                    whileHover={{ scale: 1.02 }}
+                    className="rounded-2xl border border-white/50 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-800/70"
+                  >
+                    <p className="text-sm uppercase tracking-wide text-slate-500 dark:text-slate-400">{item.typeLabel}</p>
+                    <p className="font-semibold dark:text-slate-100">{item.title}</p>
                   </motion.div>
                 ))}
               </div>

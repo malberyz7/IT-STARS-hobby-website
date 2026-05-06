@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="border-t border-white/30 bg-white/50 backdrop-blur-xl">
-      <div className="section-container py-8 text-sm text-slate-600">
-        <p className="mb-2 font-semibold text-slate-900">
+    <footer className="border-t border-white/30 bg-white/50 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60">
+      <div className="section-container py-8 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mb-2 font-semibold text-slate-900 dark:text-slate-100">
           Проект: «Моё хобби как источник вдохновения и личностного роста»
         </p>
         <p>Авторы: Мейрамбек Алимжан, Луканин Алан, Диттади Диего</p>
