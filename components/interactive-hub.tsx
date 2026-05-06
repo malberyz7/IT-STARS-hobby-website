@@ -17,6 +17,21 @@ const quizQuestions = [
     question: "Какой тип нагрузки вам ближе?",
     options: ["Выносливость и длинная игра", "Скорость и реакция", "Прыжки и резкие перемещения"],
     answer: "Скорость и реакция"
+  },
+  {
+    question: "Что вам важнее на тренировке?",
+    options: ["Сыгранность и роли в команде", "Максимальный темп и динамика", "Техника, точность и контроль"],
+    answer: "Сыгранность и роли в команде"
+  },
+  {
+    question: "Как вы чаще принимаете решения в игре?",
+    options: ["Смотрю на поле и строю план на несколько шагов", "Реагирую мгновенно по ситуации", "Действую по ритму и взаимодействию с партнерами"],
+    answer: "Смотрю на поле и строю план на несколько шагов"
+  },
+  {
+    question: "Какой стиль победы вам ближе?",
+    options: ["Выигрывать за счет стратегии и дисциплины", "Выигрывать за счет скорости и импровизации", "Выигрывать за счет точных связок и координации"],
+    answer: "Выигрывать за счет стратегии и дисциплины"
   }
 ];
 
@@ -37,6 +52,10 @@ export function InteractiveHub() {
   const [cinematicMode, setCinematicMode] = useState(true);
 
   const growthScore = useMemo(() => Math.round(hours * weeks * 1.8), [hours, weeks]);
+  const quizComplete = useMemo(
+    () => selected.filter(Boolean).length === quizQuestions.length,
+    [selected]
+  );
 
   const filteredItems = useMemo(() => {
     if (filter === "all") {
@@ -52,6 +71,10 @@ export function InteractiveHub() {
   };
 
   const calculateQuiz = () => {
+    if (!quizComplete) {
+      setQuizResult(null);
+      return;
+    }
     let score = 0;
     quizQuestions.forEach((q, i) => {
       if (selected[i] === q.answer) {
@@ -102,16 +125,21 @@ export function InteractiveHub() {
                     </div>
                   </motion.div>
                 ))}
-                <Button onClick={calculateQuiz} className="h-11 rounded-2xl px-6 text-base">
+                <Button onClick={calculateQuiz} className="h-11 rounded-2xl px-6 text-base" disabled={!quizComplete}>
                   Узнать результат
                 </Button>
+                {!quizComplete && (
+                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                    Ответьте на все вопросы, чтобы увидеть результат.
+                  </p>
+                )}
                 {quizResult !== null && (
                   <p className="text-base font-semibold text-indigo-600 dark:text-indigo-300">
                     Результат: {quizResult}/{quizQuestions.length}.{" "}
-                    {quizResult === quizQuestions.length
+                    {quizResult >= 4
                       ? "Вам отлично подходит футбол: стратегическое мышление и командная дисциплина на высоте."
-                      : quizResult === 1
-                        ? "Вам близок баскетбол: скорость реакции и гибкость решений."
+                      : quizResult >= 2
+                        ? "Вам близок баскетбол: скорость реакции, динамика и гибкость решений."
                         : "Вам подходит волейбол: координация, командность и ритм движения."}
                   </p>
                 )}
