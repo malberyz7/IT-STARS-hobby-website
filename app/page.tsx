@@ -1,77 +1,83 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Bolt, Brain, Camera, HeartHandshake, Lightbulb, Sparkles, Star } from "lucide-react";
+import Link from "next/link";
+import { Brain, Dumbbell, Goal, Sparkles, Trophy, Users } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { SafeImage } from "@/components/safe-image";
 import { InteractiveHub } from "@/components/interactive-hub";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
-const hobbyCards = [
+const sportCards = [
   {
-    title: "Эмоции в одном кадре",
-    text: "Фотография учит видеть не только форму, но и чувства: в глазах, жестах и свете."
+    title: "⚽ Футбол - Алан",
+    text: "Футбол научил Алана командной работе, выносливости и умению брать ответственность в решающий момент.",
+    href: "/football",
+    accent: "text-emerald-500"
   },
   {
-    title: "Дисциплина через практику",
-    text: "Чтобы поймать лучший момент, нужно терпение, регулярность и готовность пробовать снова."
+    title: "🏀 Баскетбол - Алимжан",
+    text: "Баскетбол развивает у Алимжана скорость мышления, реакцию и дисциплину на тренировках.",
+    href: "/basketball",
+    accent: "text-orange-500"
   },
   {
-    title: "Креативное мышление",
-    text: "Каждая съемка - это вопрос: как рассказать историю так, чтобы ее захотелось почувствовать?"
+    title: "🏐 Волейбол - Диего",
+    text: "Волейбол формирует у Диего координацию, прыжковую мощь и чувство сильной командной поддержки.",
+    href: "/volleyball",
+    accent: "text-sky-500"
   }
 ];
 
 const timeline = [
   {
     step: "01",
-    title: "Первый интерес",
-    text: "Все началось с обычной камеры телефона и большого любопытства к деталям вокруг."
+    title: "Спорт с детства",
+    text: "Мы начали тренироваться еще в школьные годы и быстро поняли, что спорт - это не временное увлечение."
   },
   {
     step: "02",
-    title: "Осознанная практика",
-    text: "Я изучил композицию, работу со светом и начал регулярно тренировать визуальное мышление."
+    title: "Дисциплина каждый день",
+    text: "Постоянные тренировки, режим и командная ответственность научили нас держать слово и идти к цели."
   },
   {
     step: "03",
-    title: "Личностный рост",
-    text: "Хобби помогло мне стать увереннее, глубже смотреть на мир и вдохновлять одноклассников."
+    title: "Успех в учебе и жизни",
+    text: "Спорт усилил концентрацию, уверенность и мотивацию. Эти навыки помогают нам не только на площадке."
   }
 ];
 
 const benefits = [
   {
-    icon: Lightbulb,
-    title: "Вдохновение каждый день",
-    text: "Даже обычная прогулка превращается в поиск необычного ракурса."
+    icon: Goal,
+    title: "Характер победителя",
+    text: "Мы учимся не сдаваться после неудач и сохранять фокус на результате."
   },
   {
     icon: Brain,
-    title: "Концентрация и внимание",
-    text: "Фотография развивает наблюдательность и учит работать с деталями."
+    title: "Быстрое мышление",
+    text: "Спорт тренирует реакцию, стратегию и мгновенное принятие решений."
   },
   {
-    icon: HeartHandshake,
-    title: "Командная работа",
-    text: "Совместные проекты учат слушать, поддерживать и создавать общее видение."
+    icon: Users,
+    title: "Командность",
+    text: "Мы поддерживаем друг друга, учимся слышать партнеров и играть на общий успех."
   },
   {
-    icon: Bolt,
-    title: "Уверенная самопрезентация",
-    text: "Снимать и показывать свои работы - это путь к уверенности в себе."
+    icon: Dumbbell,
+    title: "Дисциплина и режим",
+    text: "Регулярность тренировок формирует внутренний порядок и силу воли."
   }
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1516031190212-da133013de50?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=1400&q=80"
+  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1400&q=80",
+  "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1400&q=80"
 ];
 
 const revealStagger = {
@@ -112,9 +118,9 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.7 }}
-            className="max-w-4xl text-4xl font-black leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl lg:text-7xl"
+            className="max-w-5xl text-4xl font-black leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl lg:text-7xl"
           >
-            <span className="gradient-text">Моё хобби</span> как источник вдохновения и личностного роста
+            <span className="gradient-text">Спорт - это не просто хобби.</span> Это наш образ жизни.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -122,8 +128,8 @@ export default function HomePage() {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="mt-6 max-w-2xl text-lg text-slate-700 dark:text-slate-300"
           >
-            А что, если один кадр может изменить мышление? Мое хобби - фотография. Через объектив я учусь видеть
-            глубже, чувствовать тоньше и расти быстрее.
+            Мы занимаемся спортом всю жизнь, и именно он формирует наш характер, дисциплину и стремление к успеху.
+            Футбол, баскетбол и волейбол стали для нас школой лидерства и мотивации.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -131,15 +137,15 @@ export default function HomePage() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="mt-9 flex flex-wrap gap-4"
           >
-            <Link href="#interactive">
+            <Link href="#team">
               <Button className="glow-button group h-12 rounded-2xl px-7 text-base">
-                Пройти квиз вдохновения
+                Наша спортивная команда
                 <Sparkles className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:scale-125" />
               </Button>
             </Link>
             <Link href="#gallery">
               <Button variant="outline" className="h-12 rounded-2xl px-7 text-base">
-                Посмотреть галерею
+                Смотреть галерею спорта
               </Button>
             </Link>
           </motion.div>
@@ -152,42 +158,44 @@ export default function HomePage() {
             className="relative hidden gap-4 lg:grid"
           >
             <motion.div variants={revealItem} className="neon-card premium-card ml-6 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-600">Фокус недели</p>
-              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">«Свет и эмоции»</p>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Как один кадр передает настроение лучше длинного текста?</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">Футбол</p>
+              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">Алан</p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Выносливость, стратегия и командное мышление на поле.</p>
             </motion.div>
             <motion.div variants={revealItem} className="neon-card premium-card mr-8 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600">Личный челлендж</p>
-              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">30 дней визуального роста</p>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Каждый день - новый ракурс, новая идея, новый взгляд на привычное.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-500">Баскетбол</p>
+              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">Алимжан</p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Реакция, скорость решений и лидерство в напряженных матчах.</p>
             </motion.div>
             <motion.div variants={revealItem} className="neon-card premium-card ml-14 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">Вопрос к вам</p>
-              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">Что вдохновляет именно вас?</p>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Музыка, спорт, рисование? Любое хобби может стать вашим источником роста.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-500">Волейбол</p>
+              <p className="mt-2 text-xl font-bold text-slate-900 dark:text-slate-100">Диего</p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Координация, прыжковая сила и взаимное доверие внутри команды.</p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      <AnimatedSection id="about" className="section-container">
+      <AnimatedSection id="team" className="section-container">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="eyebrow">О хобби</p>
-            <h2 className="section-title">Почему именно фотография?</h2>
+            <p className="eyebrow">Наша команда</p>
+            <h2 className="section-title">Три спорта, одна философия роста</h2>
           </div>
           <p className="max-w-xl text-slate-600 dark:text-slate-300">
-            Это не просто снимки. Это язык, который помогает выражать идеи, сохранять моменты и искать вдохновение в
-            каждом дне.
+            Мы разные по виду спорта, но едины в главном: дисциплина, мотивация и движение вперед каждый день.
           </p>
         </div>
         <motion.div variants={revealStagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="grid gap-5 md:grid-cols-3">
-          {hobbyCards.map((item, index) => (
+          {sportCards.map((item, index) => (
             <motion.div key={item.title} variants={revealItem} whileHover={{ y: -8, scale: 1.03 }} transition={{ duration: 0.25 }}>
               <Card className="neon-card premium-card h-full">
-                <p className="mb-4 text-sm font-semibold text-indigo-600">0{index + 1}</p>
+                <p className={`mb-4 text-sm font-semibold ${item.accent}`}>0{index + 1}</p>
                 <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
                 <p className="text-slate-600 dark:text-slate-300">{item.text}</p>
+                <Link href={item.href} className="mt-4 inline-block text-sm font-semibold text-indigo-600 dark:text-indigo-300">
+                  Перейти на страницу →
+                </Link>
               </Card>
             </motion.div>
           ))}
@@ -197,8 +205,8 @@ export default function HomePage() {
       <AnimatedSection id="story" className="section-container grid items-center gap-8 lg:grid-cols-2">
         <div className="overflow-hidden rounded-3xl">
           <SafeImage
-            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1400&q=80"
-            alt="Фотограф за работой"
+            src="/images/team-sport-photo.png"
+            alt="Командная фотография спортсменов на поле"
             width={1400}
             height={900}
                 className="h-full min-h-[340px] w-full object-cover brightness-[0.98] dark:brightness-75"
@@ -206,7 +214,7 @@ export default function HomePage() {
         </div>
         <div>
           <p className="eyebrow">Моя история</p>
-          <h2 className="section-title">Путь от интереса к уверенности</h2>
+          <h2 className="section-title">Наш путь в спорте: от детства к цели</h2>
           <div className="mt-6 space-y-4">
             {timeline.map((item) => (
               <Card key={item.step} className="premium-card">
@@ -222,10 +230,10 @@ export default function HomePage() {
       <AnimatedSection id="benefits" className="section-container grid items-center gap-8 lg:grid-cols-2">
         <div>
           <p className="eyebrow">Польза</p>
-          <h2 className="section-title">Как хобби меняет меня каждый день</h2>
+          <h2 className="section-title">Как спорт меняет наш характер каждый день</h2>
           <p className="mt-4 text-slate-600 dark:text-slate-300">
-            Что вы развиваете через свое хобби прямо сейчас? Фотография помогает мне быть внимательнее, спокойнее и
-            смелее в идеях.
+            А вы замечали, как спорт меняет мышление? Мы стали организованнее, увереннее и научились работать ради
+            общего результата.
           </p>
         </div>
         <motion.div variants={revealStagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="grid gap-4 sm:grid-cols-2">
@@ -243,13 +251,13 @@ export default function HomePage() {
 
       <AnimatedSection id="gallery" className="section-container">
         <p className="eyebrow">Галерея</p>
-        <h2 className="section-title">Моменты, которые вдохновляют</h2>
+        <h2 className="section-title">Моменты футбола, баскетбола и волейбола</h2>
         <motion.div variants={revealStagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.map((src, index) => (
             <motion.div key={src} variants={revealItem} className="group relative overflow-hidden rounded-3xl">
               <SafeImage
                 src={src}
-                alt={`Фотография из галереи ${index + 1}`}
+                alt={`Спортивный момент ${index + 1}`}
                 width={1200}
                 height={900}
                 className="h-72 w-full object-cover transition duration-700 group-hover:scale-110"
@@ -262,15 +270,15 @@ export default function HomePage() {
 
       <AnimatedSection id="interactive" className="section-container">
         <p className="eyebrow">Интерактив</p>
-        <h2 className="section-title">Проверьте свой стиль роста</h2>
+        <h2 className="section-title mb-8">Какой вид спорта подходит именно вам?</h2>
         <InteractiveHub />
       </AnimatedSection>
 
       <AnimatedSection id="contacts" className="section-container grid gap-6 lg:grid-cols-2">
         <Card className="neon-card premium-card">
           <p className="eyebrow">Контакты</p>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Готовы поделиться своим хобби?</h3>
-          <p className="mt-3 text-slate-600 dark:text-slate-300">Какое занятие вдохновляет вас становиться лучше каждый день?</p>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Готовы рассказать о своем спорте?</h3>
+          <p className="mt-3 text-slate-600 dark:text-slate-300">Как спорт влияет на ваш характер, дисциплину и успех?</p>
           <div className="mt-5 space-y-2 text-slate-700 dark:text-slate-200">
             <p>Почта: school.project@lakeview.edu.kz</p>
             <p>Локация: Lakeview School Almaty</p>
@@ -280,9 +288,9 @@ export default function HomePage() {
         <Card className="neon-card premium-card">
           <p className="eyebrow">Авторы проекта</p>
           <ul className="space-y-3 text-lg font-semibold text-slate-900 dark:text-slate-100">
-            <li>Мейрамбек Алимжан</li>
-            <li>Луканин Алан</li>
-            <li>Диттади Диего</li>
+            <li>Алан - Футбол</li>
+            <li>Алимжан - Баскетбол</li>
+            <li>Диего - Волейбол</li>
           </ul>
           <div className="mt-5 rounded-2xl border border-white/50 bg-white/70 p-4 text-sm text-slate-700 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
             <p>Название школы - Lakeview School Almaty</p>
@@ -290,8 +298,8 @@ export default function HomePage() {
             <p>Дата - 06.05.2026</p>
           </div>
           <div className="mt-4 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-            <Star className="h-4 w-4 text-amber-500" />
-            <span>Сайт создан для школьного конкурса с акцентом на вдохновение и рост.</span>
+            <Trophy className="h-4 w-4 text-amber-500" />
+            <span>Командный спортивный проект для школьного конкурса.</span>
           </div>
         </Card>
       </AnimatedSection>
@@ -301,7 +309,7 @@ export default function HomePage() {
       <div className="floating-dot right-[16%] top-[34%] delay-1000" />
       <div className="floating-dot left-[22%] bottom-[16%] delay-500" />
       <div className="floating-dot right-[22%] bottom-[20%] delay-700" />
-      <Camera className="pointer-events-none absolute right-8 top-[20%] hidden h-7 w-7 text-violet-300/60 lg:block" />
+      <Goal className="pointer-events-none absolute right-8 top-[20%] hidden h-7 w-7 text-violet-300/60 lg:block" />
     </div>
   );
 }

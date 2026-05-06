@@ -3,9 +3,9 @@ export function Footer() {
     <footer className="border-t border-white/30 bg-white/50 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60">
       <div className="section-container py-8 text-sm text-slate-600 dark:text-slate-300">
         <p className="mb-2 font-semibold text-slate-900 dark:text-slate-100">
-          Проект: «Моё хобби как источник вдохновения и личностного роста»
+          Проект: «Мы занимаемся спортом всю жизнь и как это влияет на наш характер, дисциплину и успех»
         </p>
-        <p>Авторы: Мейрамбек Алимжан, Луканин Алан, Диттади Диего</p>
+        <p>Алан - Футбол | Алимжан - Баскетбол | Диего - Волейбол</p>
         <p>Название школы: Lakeview School Almaty | Класс: 11 | Дата: 06.05.2026</p>
         <p className="mt-2 font-medium text-slate-700 dark:text-slate-100">Сайт создан с использованием ИИ</p>
         <p className="mt-2">
