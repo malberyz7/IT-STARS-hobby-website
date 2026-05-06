@@ -6,23 +6,23 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { href: "/", label: "Главная" },
-  { href: "/about", label: "О моем хобби" },
-  { href: "/story", label: "Моя история" },
-  { href: "/impact", label: "Польза и влияние" },
-  { href: "/gallery", label: "Галерея" },
-  { href: "/interactive", label: "Интерактив" },
-  { href: "/contact", label: "Контакты" }
+  { href: "#hero", label: "Главная" },
+  { href: "#about", label: "О хобби" },
+  { href: "#story", label: "История" },
+  { href: "#benefits", label: "Польза" },
+  { href: "#gallery", label: "Галерея" },
+  { href: "#interactive", label: "Интерактив" },
+  { href: "#contacts", label: "Контакты" }
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-lg">
+    <header className="sticky top-0 z-50 border-b border-white/30 bg-white/55 backdrop-blur-2xl">
       <nav className="section-container py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-lg font-extrabold text-primary">
+          <Link href="#hero" className="text-lg font-extrabold text-slate-900">
             ХоббиСвет
           </Link>
 
@@ -37,7 +37,10 @@ export function Navbar() {
           <ul className="hidden items-center gap-3 md:flex">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-secondary">
+                <Link
+                  href={item.href}
+                  className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white/70 hover:text-slate-900"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -51,7 +54,7 @@ export function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-secondary"
+                  className="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white/70"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
@@ -59,7 +62,9 @@ export function Navbar() {
               </li>
             ))}
             <li>
-              <Button className="w-full">Исследовать мое хобби</Button>
+              <Link href="#interactive" onClick={() => setOpen(false)}>
+                <Button className="w-full">Пройти квиз</Button>
+              </Link>
             </li>
           </ul>
         )}

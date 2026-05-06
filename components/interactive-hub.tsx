@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Tabs } from "@/components/ui/tabs";
@@ -32,6 +34,7 @@ export function InteractiveHub() {
   const [hours, setHours] = useState(4);
   const [weeks, setWeeks] = useState(8);
   const [filter, setFilter] = useState("all");
+  const [cinematicMode, setCinematicMode] = useState(true);
 
   const growthScore = useMemo(() => Math.round(hours * weeks * 1.8), [hours, weeks]);
 
@@ -65,33 +68,35 @@ export function InteractiveHub() {
           id: "quiz",
           label: "Квиз о хобби",
           content: (
-            <Card className="border-none p-0 shadow-none">
+            <Card className="border-none bg-transparent p-0 shadow-none">
               <div className="space-y-6">
                 {quizQuestions.map((q, i) => (
-                  <div key={q.question} className="rounded-xl bg-slate-50 p-4">
+                  <motion.div key={q.question} whileHover={{ y: -2 }} className="rounded-2xl border border-white/50 bg-white/70 p-4">
                     <p className="mb-3 font-semibold">{q.question}</p>
                     <div className="grid gap-2">
                       {q.options.map((opt) => (
                         <button
                           key={opt}
                           onClick={() => toggleAnswer(i, opt)}
-                          className={`rounded-lg border px-3 py-2 text-left text-sm transition ${
-                            selected[i] === opt ? "border-primary bg-secondary" : "border-slate-200 hover:bg-slate-100"
+                          className={`rounded-xl border px-3 py-2 text-left text-sm transition ${
+                            selected[i] === opt
+                              ? "border-indigo-400 bg-indigo-50 text-indigo-900"
+                              : "border-slate-200 bg-white hover:bg-slate-50"
                           }`}
                         >
                           {opt}
                         </button>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
                 <Button onClick={calculateQuiz}>Проверить результат</Button>
                 {quizResult !== null && (
-                  <p className="text-sm font-semibold text-primary">
+                  <p className="text-sm font-semibold text-indigo-600">
                     Результат: {quizResult}/{quizQuestions.length}.{" "}
                     {quizResult === quizQuestions.length
-                      ? "Поздравляю! Вы настоящий мастер кадра."
-                      : "Хорошая попытка! Тренируйте глаз к деталям — и все получится."}
+                      ? "Поздравляем! Вы мыслите как настоящий визуальный сторителлер."
+                      : "Хороший старт. Наблюдательность и практика обязательно приведут к сильным кадрам."}
                   </p>
                 )}
               </div>
@@ -128,9 +133,30 @@ export function InteractiveHub() {
                   />
                 </label>
               </div>
-              <div className="rounded-xl bg-secondary p-4 text-secondary-foreground">
-                Примерный индекс роста: <span className="font-bold">{growthScore}</span>
+              <div className="flex items-center justify-between rounded-2xl border border-white/50 bg-white/70 p-4">
+                <div>
+                  <p className="text-sm text-slate-600">Примерный индекс роста</p>
+                  <p className="text-2xl font-bold text-slate-900">{growthScore}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setCinematicMode((prev) => !prev)}
+                  className={`relative h-8 w-14 rounded-full transition ${cinematicMode ? "bg-indigo-500" : "bg-slate-300"}`}
+                  aria-label="Переключить кинематографичный режим"
+                >
+                  <span
+                    className={`absolute top-1 h-6 w-6 rounded-full bg-white transition ${
+                      cinematicMode ? "left-7" : "left-1"
+                    }`}
+                  />
+                </button>
               </div>
+              <p className="flex items-center gap-2 text-sm text-slate-600">
+                {cinematicMode ? <Check className="h-4 w-4 text-emerald-500" /> : <Sparkles className="h-4 w-4 text-amber-500" />}
+                {cinematicMode
+                  ? "Кинематографичный режим включен: фокус на атмосфере и эмоциях."
+                  : "Режим практики включен: фокус на технике и повторяемости."}
+              </p>
             </div>
           )
         },
@@ -157,10 +183,10 @@ export function InteractiveHub() {
               </div>
               <div className="grid gap-3 sm:grid-cols-2">
                 {filteredItems.map((item) => (
-                  <div key={item.id} className="rounded-xl border border-slate-200 p-4">
+                  <motion.div key={item.id} whileHover={{ scale: 1.02 }} className="rounded-2xl border border-white/50 bg-white/70 p-4">
                     <p className="text-sm uppercase tracking-wide text-slate-500">{item.typeLabel}</p>
                     <p className="font-semibold">{item.title}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
