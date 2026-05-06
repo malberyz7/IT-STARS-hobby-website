@@ -280,7 +280,6 @@ export default function HomePage() {
           <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Готовы рассказать о своем спорте?</h3>
           <p className="mt-3 text-slate-600 dark:text-slate-300">Как спорт влияет на ваш характер, дисциплину и успех?</p>
           <div className="mt-5 space-y-2 text-slate-700 dark:text-slate-200">
-            <p>Почта: school.project@lakeview.edu.kz</p>
             <p>Локация: Lakeview School Almaty</p>
             <p>Класс: 11</p>
           </div>
@@ -296,10 +295,6 @@ export default function HomePage() {
             <p>Название школы - Lakeview School Almaty</p>
             <p>Класс - 11</p>
             <p>Дата - 06.05.2026</p>
-          </div>
-          <div className="mt-4 flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-            <Trophy className="h-4 w-4 text-amber-500" />
-            <span>Командный спортивный проект для школьного конкурса.</span>
           </div>
         </Card>
       </AnimatedSection>
