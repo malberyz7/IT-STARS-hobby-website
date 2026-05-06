@@ -135,7 +135,6 @@ export function InteractiveHub() {
                 )}
                 {quizResult !== null && (
                   <p className="text-base font-semibold text-indigo-600 dark:text-indigo-300">
-                    Результат: {quizResult}/{quizQuestions.length}.{" "}
                     {quizResult >= 4
                       ? "Вам отлично подходит футбол: стратегическое мышление и командная дисциплина на высоте."
                       : quizResult >= 2

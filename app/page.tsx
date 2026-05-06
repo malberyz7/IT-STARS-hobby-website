@@ -112,7 +112,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="mb-5 w-fit rounded-full border border-white/40 bg-white/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-700 backdrop-blur-xl dark:border-white/20 dark:bg-slate-800/55 dark:text-slate-200"
           >
-            Школьный конкурс - 2026
+            IT-Stars 2026
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
