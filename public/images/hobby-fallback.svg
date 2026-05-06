@@ -1,0 +1,33 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="40" x2="1500" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="0.45" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#F97316"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 260) rotate(38) scale(500 300)">
+      <stop stop-color="#F472B6" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 780) rotate(210) scale(600 360)">
+      <stop stop-color="#22D3EE" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <rect width="1600" height="1100" fill="url(#glow1)"/>
+  <rect width="1600" height="1100" fill="url(#glow2)"/>
+  <g opacity="0.88">
+    <rect x="410" y="240" width="780" height="500" rx="42" fill="#0F172A" fill-opacity="0.45" stroke="white" stroke-opacity="0.35" stroke-width="3"/>
+    <rect x="480" y="305" width="640" height="370" rx="24" fill="white" fill-opacity="0.18"/>
+    <path d="M620 600L760 450L860 540L980 420L1080 600H620Z" fill="white" fill-opacity="0.34"/>
+    <circle cx="955" cy="390" r="42" fill="white" fill-opacity="0.45"/>
+    <rect x="540" y="760" width="520" height="18" rx="9" fill="white" fill-opacity="0.38"/>
+  </g>
+  <text x="800" y="845" text-anchor="middle" fill="white" fill-opacity="0.92" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700">
+    $>B> 2@5<5==> =54>ABC?=>
+  </text>
+  <text x="800" y="895" text-anchor="middle" fill="white" fill-opacity="0.8" font-family="Inter, Arial, sans-serif" font-size="28">
+    >:070= 157>?0A=K9 @575@2=K9 :04@
+  </text>
+</svg>
