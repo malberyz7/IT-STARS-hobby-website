@@ -44,7 +44,7 @@ export function Navbar() {
       <nav
         className={`mx-auto flex w-full max-w-6xl items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-300 sm:px-5 ${
           scrolled
-            ? "border-white/20 bg-white/60 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.75)] backdrop-blur-2xl dark:border-indigo-400/25 dark:bg-slate-900/72 dark:shadow-[0_0_24px_-10px_rgba(129,140,248,0.9)]"
+            ? "border-white/25 bg-white/45 shadow-[0_20px_45px_-30px_rgba(15,23,42,0.75)] backdrop-blur-2xl dark:border-white/10 dark:bg-slate-900/55 dark:shadow-[0_0_24px_-10px_rgba(129,140,248,0.9)]"
             : "border-white/30 bg-white/45 shadow-[0_16px_35px_-28px_rgba(15,23,42,0.75)] backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/55 dark:shadow-[0_0_20px_-12px_rgba(99,102,241,0.75)]"
         }`}
       >
