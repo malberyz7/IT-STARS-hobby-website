@@ -72,12 +72,12 @@ const benefits = [
 ];
 
 const gallery = [
-  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1400&q=80",
-  "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1400&q=80"
+  "/images/gallery-sport-1.png",
+  "/images/gallery-sport-2.png",
+  "/images/gallery-sport-3.png",
+  "/images/gallery-sport-4.png",
+  "/images/gallery-sport-5.png",
+  "/images/gallery-sport-6.png"
 ];
 
 const revealStagger = {
