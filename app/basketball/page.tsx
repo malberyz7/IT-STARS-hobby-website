@@ -6,9 +6,9 @@ import { SectionTitle } from "@/components/section-title";
 import { Card } from "@/components/ui/card";
 
 const basketballGallery = [
-  "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?auto=format&fit=crop&w=1200&q=80"
+  { src: "/images/basketball-real-1.png", objectPosition: "center 45%" },
+  { src: "/images/basketball-real-2.png", objectPosition: "center 18%" },
+  { src: "/images/basketball-real-3.png", objectPosition: "center 42%" }
 ];
 
 export default function BasketballPage() {
@@ -49,14 +49,15 @@ export default function BasketballPage() {
       <div className="mt-8">
         <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-100">Галерея баскетбола</h3>
         <div className="grid gap-4 md:grid-cols-3">
-          {basketballGallery.map((src, index) => (
-            <div key={src} className="group overflow-hidden rounded-2xl">
+          {basketballGallery.map((item, index) => (
+            <div key={item.src} className="group overflow-hidden rounded-2xl">
               <SafeImage
-                src={src}
+                src={item.src}
                 alt={`Баскетбол - момент ${index + 1}`}
                 width={1200}
                 height={800}
                 className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+                style={{ objectPosition: item.objectPosition }}
               />
             </div>
           ))}

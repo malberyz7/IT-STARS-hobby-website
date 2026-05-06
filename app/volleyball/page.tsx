@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const volleyballGallery = [
-  "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=1200&q=80"
+  { src: "/images/volleyball-real-1.png", objectPosition: "center center" },
+  { src: "/images/volleyball-real-2.png", objectPosition: "center center" }
 ];
 
 export default function VolleyballPage() {
@@ -46,15 +45,16 @@ export default function VolleyballPage() {
 
       <div className="mt-8">
         <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-slate-100">Галерея волейбола</h3>
-        <div className="grid gap-4 md:grid-cols-3">
-          {volleyballGallery.map((src, index) => (
-            <div key={src} className="group overflow-hidden rounded-2xl">
+        <div className="grid gap-4 md:grid-cols-2">
+          {volleyballGallery.map((item, index) => (
+            <div key={item.src} className="group overflow-hidden rounded-2xl">
               <SafeImage
-                src={src}
+                src={item.src}
                 alt={`Волейбол - момент ${index + 1}`}
                 width={1200}
                 height={800}
                 className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+                style={{ objectPosition: item.objectPosition }}
               />
             </div>
           ))}
