@@ -7,34 +7,99 @@ import { Button } from "@/components/ui/button";
 
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/football-1.png",
     type: "football",
-    title: "Футбол: матчевый темп"
+    title: "Футбол: игровой момент"
   },
   {
-    src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1200&q=80",
-    type: "basketball",
-    title: "Баскетбол: игра под кольцом"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&w=1200&q=80",
-    type: "volleyball",
-    title: "Волейбол: командный блок"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/football-2.png",
     type: "football",
-    title: "Футбол: борьба за мяч"
+    title: "Футбол: командная игра"
   },
   {
-    src: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/football-3.png",
+    type: "football",
+    title: "Футбол: на тренировке"
+  },
+  {
+    src: "/images/gallery-sport-1.png",
+    type: "football",
+    title: "Футбол: удар по мячу"
+  },
+  {
+    src: "/images/gallery-sport-2.png",
+    type: "football",
+    title: "Футбол: игровой эпизод"
+  },
+  {
+    src: "/images/gallery-sport-3.png",
     type: "basketball",
-    title: "Баскетбол: концентрация и точность"
+    title: "Баскетбол: владение мячом"
   },
   {
-    src: "https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1200&q=80",
+    src: "/images/gallery-sport-4.png",
+    type: "basketball",
+    title: "Баскетбол: бросок"
+  },
+  {
+    src: "/images/gallery-sport-5.png",
+    type: "basketball",
+    title: "Баскетбол: матч"
+  },
+  {
+    src: "/images/gallery-sport-6.png",
+    type: "football",
+    title: "Футбол: командный эпизод"
+  },
+  {
+    src: "/images/basketball-real-1.png",
+    type: "basketball",
+    title: "Баскетбол: турнирная фотография"
+  },
+  {
+    src: "/images/basketball-real-2.png",
+    type: "basketball",
+    title: "Баскетбол: тренировка с тренером"
+  },
+  {
+    src: "/images/basketball-real-3.png",
+    type: "basketball",
+    title: "Баскетбол: игровой коллаж"
+  },
+  {
+    src: "/images/volleyball-real-1.png",
     type: "volleyball",
-    title: "Волейбол: синхронная атака"
+    title: "Волейбол: прием мяча"
+  },
+  {
+    src: "/images/volleyball-real-2.png",
+    type: "volleyball",
+    title: "Волейбол: портрет после розыгрыша"
+  },
+  {
+    src: "/images/gallery-volleyball-1.png",
+    type: "volleyball",
+    title: "Волейбол: прием в защите"
+  },
+  {
+    src: "/images/gallery-volleyball-2.png",
+    type: "volleyball",
+    title: "Волейбол: подготовка к подаче"
+  },
+  {
+    src: "/images/gallery-volleyball-3.png",
+    type: "volleyball",
+    title: "Волейбол: атака у сетки"
+  },
+  {
+    src: "/images/gallery-volleyball-4.png",
+    type: "volleyball",
+    title: "Волейбол: игровой момент"
+  },
+  {
+    src: "/images/team-sport-photo.png",
+    type: "football",
+    title: "Командное фото на поле"
   }
 ];
 

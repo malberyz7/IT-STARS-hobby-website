@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const volleyballGallery = [
-  { src: "/images/volleyball-real-1.png", objectPosition: "center center" },
-  { src: "/images/volleyball-real-2.png", objectPosition: "center center" }
+  { src: "/images/volleyball-page-1.png", objectPosition: "center 24%" },
+  { src: "/images/volleyball-page-2.png", objectPosition: "center 34%" }
 ];
 
 export default function VolleyballPage() {
