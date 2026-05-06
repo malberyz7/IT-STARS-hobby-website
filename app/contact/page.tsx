@@ -12,8 +12,8 @@ export default function ContactPage() {
     <div className="section-container">
       <SectionTitle
         eyebrow="Контакты"
-        title="Давайте познакомимся"
-        description="У вас тоже есть хобби, которое изменило вашу жизнь? Напишите мне!"
+        title="Связаться с нашей спортивной командой"
+        description="У вас тоже спорт с детства? Напишите нам, как тренировки влияют на ваш характер и успех."
       />
 
       <Card className="max-w-2xl">
@@ -35,7 +35,7 @@ export default function ContactPage() {
           <Button type="submit" className="w-fit">
             Отправить сообщение
           </Button>
-          {sent && <p className="text-sm text-primary">Сообщение отправлено! (Демо-режим, но мотивация самая настоящая.)</p>}
+          {sent && <p className="text-sm text-primary">Сообщение отправлено! Спасибо за спортивную энергию и мотивацию.</p>}
         </form>
       </Card>
     </div>

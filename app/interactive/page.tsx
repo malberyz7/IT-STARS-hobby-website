@@ -6,8 +6,8 @@ export default function InteractivePage() {
     <div className="section-container">
       <SectionTitle
         eyebrow="Интерактив"
-        title="Попробуйте сами"
-        description="Здесь никакой скучной статики: пройдите квиз, посчитайте прогресс и отфильтруйте мини-галерею."
+        title="Определите свой спортивный стиль"
+        description="Пройдите квиз, посчитайте тренировочный индекс и посмотрите спортивные сценарии через фильтр."
       />
       <InteractiveHub />
     </div>

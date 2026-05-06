@@ -6,28 +6,23 @@ export default function AboutPage() {
   return (
     <div className="section-container">
       <SectionTitle
-        eyebrow="О моем хобби"
-        title="Фотография — мой любимый способ собирать истории"
-        description="Фотография помогает останавливать моменты, передавать эмоции и замечать красоту в обычных вещах."
+        eyebrow="О проекте"
+        title="Командный проект о спорте и личностном росте"
+        description="Мы показываем, как футбол, баскетбол и волейбол формируют характер, дисциплину и мотивацию в жизни."
       />
 
       <AnimatedSection className="grid gap-4 md:grid-cols-3">
-        <Card>
-          <h3 className="mb-2 text-xl font-semibold">Почему именно это хобби?</h3>
-          <p className="text-slate-600">
-            Мне нравится, что один кадр может сказать то, что сложно объяснить сотней слов. И да, камера никогда не
-            говорит: «Я занята».
-          </p>
+        <Card className="premium-card">
+          <h3 className="mb-2 text-xl font-semibold text-emerald-500">Футбол - Алан</h3>
+          <p className="text-slate-600 dark:text-slate-300">Выносливость, командное взаимодействие и ответственность на поле.</p>
         </Card>
-        <Card>
-          <h3 className="mb-2 text-xl font-semibold">На чем я фокусируюсь</h3>
-          <p className="text-slate-600">Природа, городские сцены и искренние эмоции людей вокруг.</p>
+        <Card className="premium-card">
+          <h3 className="mb-2 text-xl font-semibold text-orange-500">Баскетбол - Алимжан</h3>
+          <p className="text-slate-600 dark:text-slate-300">Скорость решений, реакция и игровое мышление под давлением.</p>
         </Card>
-        <Card>
-          <h3 className="mb-2 text-xl font-semibold">Моя цель</h3>
-          <p className="text-slate-600">
-            Вдохновлять одноклассников замечать красоту, развивать креативность и сохранять свой путь роста.
-          </p>
+        <Card className="premium-card">
+          <h3 className="mb-2 text-xl font-semibold text-sky-500">Волейбол - Диего</h3>
+          <p className="text-slate-600 dark:text-slate-300">Координация, прыжковая мощь и доверие к партнерам в каждой атаке.</p>
         </Card>
       </AnimatedSection>
     </div>

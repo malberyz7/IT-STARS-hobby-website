@@ -4,18 +4,18 @@ import { Card } from "@/components/ui/card";
 const timeline = [
   {
     year: "2022",
-    title: "Все началось с камеры телефона",
-    text: "На школьной поездке я сделал несколько случайных снимков и понял, что люблю ловить моменты, которые другие не замечают."
+    title: "Первые секции и турниры",
+    text: "Мы начали заниматься спортом в школьных секциях и полюбили атмосферу команды и движения к общей цели."
   },
   {
     year: "2023",
-    title: "От случайных кадров к осознанной съемке",
-    text: "Я изучил основы композиции, света и обработки по обучающим видео и, конечно, через постоянную практику."
+    title: "Режим и дисциплина",
+    text: "Тренировки стали регулярными: мы научились планировать время, совмещать учебу и спорт."
   },
   {
     year: "2024-2026",
-    title: "Делиться и вдохновлять",
-    text: "Я начал помогать одноклассникам в фотопроектах и создавать визуальные истории для школьных мероприятий."
+    title: "Лидерство и командный рост",
+    text: "Спорт дал нам уверенность, взаимную поддержку и понимание, что успех рождается в системной работе."
   }
 ];
 
@@ -23,18 +23,18 @@ export default function StoryPage() {
   return (
     <div className="section-container">
       <SectionTitle
-        eyebrow="Моя история"
-        title="Как я начал и почему не остановился"
-        description="Любое хобби начинается с маленького шага. У меня все началось с любопытства и переросло в настоящее увлечение."
+        eyebrow="Наша история"
+        title="Как спорт стал нашей жизненной школой"
+        description="Футбол, баскетбол и волейбол помогли нам вырасти не только как спортсменам, но и как личности."
       />
 
       <div className="space-y-4">
         {timeline.map((item) => (
-          <Card key={item.year} className="relative pl-8">
+          <Card key={item.year} className="premium-card relative pl-8">
             <div className="absolute left-3 top-8 h-3 w-3 rounded-full bg-primary" />
-            <p className="text-sm font-semibold text-primary">{item.year}</p>
-            <h3 className="mb-1 text-xl font-semibold">{item.title}</h3>
-            <p className="text-slate-600">{item.text}</p>
+            <p className="text-sm font-semibold text-primary dark:text-indigo-300">{item.year}</p>
+            <h3 className="mb-1 text-xl font-semibold text-slate-900 dark:text-slate-100">{item.title}</h3>
+            <p className="text-slate-600 dark:text-slate-300">{item.text}</p>
           </Card>
         ))}
       </div>

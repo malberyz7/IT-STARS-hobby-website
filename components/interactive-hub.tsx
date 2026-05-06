@@ -9,23 +9,23 @@ import { Tabs } from "@/components/ui/tabs";
 
 const quizQuestions = [
   {
-    question: "Что самое важное в хорошей фотографии?",
-    options: ["Дорогая камера", "Свет и история кадра", "Случайные фильтры", "Сделать 1000 фото за 2 минуты"],
-    answer: "Свет и история кадра"
+    question: "Как вам комфортнее достигать результата?",
+    options: ["Через тактику и командные комбинации", "Через быстрые решения и драйв", "Через координацию и чувство партнера"],
+    answer: "Через тактику и командные комбинации"
   },
   {
-    question: "Как фотография помогает мне расти?",
-    options: ["Развивает терпение и наблюдательность", "Только тратит время", "Полезна только блогерам", "Пользы нет"],
-    answer: "Развивает терпение и наблюдательность"
+    question: "Какой тип нагрузки вам ближе?",
+    options: ["Выносливость и длинная игра", "Скорость и реакция", "Прыжки и резкие перемещения"],
+    answer: "Скорость и реакция"
   }
 ];
 
 const galleryItems = [
-  { id: 1, type: "nature", typeLabel: "природа", title: "Утренний свет в парке" },
-  { id: 2, type: "people", typeLabel: "люди", title: "Улыбки между уроками" },
-  { id: 3, type: "city", typeLabel: "город", title: "Дождливый вечер на улице" },
-  { id: 4, type: "nature", typeLabel: "природа", title: "Листья в золотой час" },
-  { id: 5, type: "city", typeLabel: "город", title: "Ночная прогулка в неоне" }
+  { id: 1, type: "football", typeLabel: "футбол", title: "Пас в одно касание и рывок к воротам" },
+  { id: 2, type: "basketball", typeLabel: "баскетбол", title: "Быстрый прорыв и точный бросок" },
+  { id: 3, type: "volleyball", typeLabel: "волейбол", title: "Идеальный прием и мощная атака" },
+  { id: 4, type: "football", typeLabel: "футбол", title: "Командный прессинг в центре поля" },
+  { id: 5, type: "volleyball", typeLabel: "волейбол", title: "Блок и мгновенный переход в нападение" }
 ];
 
 export function InteractiveHub() {
@@ -61,28 +61,36 @@ export function InteractiveHub() {
     setQuizResult(score);
   };
 
+  const scrollToQuiz = () => {
+    document.getElementById("quiz-start")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <Tabs
-      items={[
+    <div className="space-y-5">
+      <Button onClick={scrollToQuiz} className="h-11 rounded-2xl px-6 text-base">
+        Пройти тест
+      </Button>
+      <Tabs
+        items={[
         {
           id: "quiz",
-          label: "Квиз о хобби",
+          label: "Спорт-квиз",
           content: (
             <Card className="border-none bg-transparent p-0 shadow-none">
-              <div className="space-y-6">
+              <div id="quiz-start" className="space-y-7">
                 {quizQuestions.map((q, i) => (
                   <motion.div
                     key={q.question}
                     whileHover={{ y: -2 }}
-                    className="rounded-2xl border border-white/50 bg-white/70 p-4 dark:border-slate-700 dark:bg-slate-800/70"
+                    className="rounded-2xl border border-white/50 bg-white/70 p-5 dark:border-slate-700 dark:bg-slate-800/70"
                   >
-                    <p className="mb-3 font-semibold dark:text-slate-100">{q.question}</p>
-                    <div className="grid gap-2">
+                    <p className="mb-3 text-base font-semibold dark:text-slate-100">{q.question}</p>
+                    <div className="grid gap-2.5">
                       {q.options.map((opt) => (
                         <button
                           key={opt}
                           onClick={() => toggleAnswer(i, opt)}
-                          className={`rounded-xl border px-3 py-2 text-left text-sm transition ${
+                          className={`rounded-xl border px-4 py-3 text-left text-base transition ${
                             selected[i] === opt
                               ? "border-indigo-400 bg-indigo-50 text-indigo-900"
                               : "border-slate-200 bg-white hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
@@ -94,13 +102,17 @@ export function InteractiveHub() {
                     </div>
                   </motion.div>
                 ))}
-                <Button onClick={calculateQuiz}>Проверить результат</Button>
+                <Button onClick={calculateQuiz} className="h-11 rounded-2xl px-6 text-base">
+                  Узнать результат
+                </Button>
                 {quizResult !== null && (
-                  <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-300">
+                  <p className="text-base font-semibold text-indigo-600 dark:text-indigo-300">
                     Результат: {quizResult}/{quizQuestions.length}.{" "}
                     {quizResult === quizQuestions.length
-                      ? "Поздравляем! Вы мыслите как настоящий визуальный сторителлер."
-                      : "Хороший старт. Наблюдательность и практика обязательно приведут к сильным кадрам."}
+                      ? "Вам отлично подходит футбол: стратегическое мышление и командная дисциплина на высоте."
+                      : quizResult === 1
+                        ? "Вам близок баскетбол: скорость реакции и гибкость решений."
+                        : "Вам подходит волейбол: координация, командность и ритм движения."}
                   </p>
                 )}
               </div>
@@ -109,11 +121,11 @@ export function InteractiveHub() {
         },
         {
           id: "calculator",
-          label: "Калькулятор практики",
+          label: "Калькулятор тренировок",
           content: (
             <div className="space-y-4">
               <p className="text-slate-700 dark:text-slate-300">
-                Хотите понять, как практика влияет на хобби? Введите часы в неделю и посмотрите примерный индекс роста.
+                Хотите понять, как тренировки влияют на прогресс? Введите часы в неделю и посмотрите индекс роста.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="text-sm dark:text-slate-200">
@@ -160,8 +172,8 @@ export function InteractiveHub() {
               <p className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
                 {cinematicMode ? <Check className="h-4 w-4 text-emerald-500" /> : <Sparkles className="h-4 w-4 text-amber-500" />}
                 {cinematicMode
-                  ? "Кинематографичный режим включен: фокус на атмосфере и эмоциях."
-                  : "Режим практики включен: фокус на технике и повторяемости."}
+                  ? "Соревновательный режим включен: фокус на результате и темпе."
+                  : "Тренировочный режим включен: фокус на технике и стабильности."}
               </p>
             </div>
           )
@@ -174,9 +186,9 @@ export function InteractiveHub() {
               <div className="mb-4 flex flex-wrap gap-2">
                 {[
                   { key: "all", label: "все" },
-                  { key: "nature", label: "природа" },
-                  { key: "people", label: "люди" },
-                  { key: "city", label: "город" }
+                  { key: "football", label: "футбол" },
+                  { key: "basketball", label: "баскетбол" },
+                  { key: "volleyball", label: "волейбол" }
                 ].map((item) => (
                   <Button
                     key={item.key}
@@ -202,7 +214,8 @@ export function InteractiveHub() {
             </div>
           )
         }
-      ]}
-    />
+        ]}
+      />
+    </div>
   );
 }
