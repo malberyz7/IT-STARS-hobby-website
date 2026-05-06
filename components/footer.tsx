@@ -7,13 +7,6 @@ export function Footer() {
         </p>
         <p>Алан - Футбол | Алимжан - Баскетбол | Диего - Волейбол</p>
         <p>Название школы: Lakeview School Almaty | Класс: 11 | Дата: 06.05.2026</p>
-        <p className="mt-2 font-medium text-slate-700 dark:text-slate-100">Сайт создан с использованием ИИ</p>
-        <p className="mt-2">
-          Визуальные материалы:{" "}
-          <a className="text-indigo-600 underline dark:text-indigo-300" href="https://unsplash.com" target="_blank" rel="noreferrer">
-            Unsplash
-          </a>
-        </p>
       </div>
     </footer>
   );
